@@ -1,5 +1,10 @@
 ![boot512](https://user-images.githubusercontent.com/42382799/155085783-a728ebfd-b664-4e8a-ac36-37466c8ed0cd.png)
 
+# Customized version of RCKeith's fork of a fork of Marlin
+
+This is a fork of RCKeith's GitHub repository that's been tweaked for where I put my axes and homing switches.
+
+The significant changes are to `Marlin/Configuration.h` and `Marlin/Configuration_adv.h`.
 
 # 4 Axes Foam Cutter firmware forked from Marlin2ForPipetBot
 

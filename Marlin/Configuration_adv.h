@@ -851,7 +851,7 @@
 
 #define HOMING_BACKOFF_POST_MM { 5, 5, 5, 5, 5 }  // (mm for linear axes, ° for rotational axes) Backoff from endstops after homing
 
-//#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
+#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
 //#define HOME_Z_FIRST                        // Home Z first. Requires a Z-MIN endstop (not a probe).
 //#define CODEPENDENT_XY_HOMING               // If X/Y can't home without homing Y/X first
@@ -1287,7 +1287,7 @@
 #endif
 
 // Play a beep when the feedrate is changed from the Status Screen
-//#define BEEP_ON_FEEDRATE_CHANGE
+// #define BEEP_ON_FEEDRATE_CHANGE
 #if ENABLED(BEEP_ON_FEEDRATE_CHANGE)
   #define FEEDRATE_CHANGE_BEEP_DURATION   10
   #define FEEDRATE_CHANGE_BEEP_FREQUENCY 440
@@ -3956,6 +3956,7 @@
 
 // Enable and set a (default) feedrate for all G0 moves
 //#define G0_FEEDRATE 3000 // (mm/min)
+#define G0_FEEDRATE 1000 // (mm/min)
 #ifdef G0_FEEDRATE
   //#define VARIABLE_G0_FEEDRATE // The G0 feedrate is set by F in G0 motion mode
 #endif
@@ -3993,32 +3994,32 @@
   #define CUSTOM_MENU_MAIN_SCRIPT_RETURN   // Return to status screen after a script
   #define CUSTOM_MENU_MAIN_ONLY_IDLE         // Only show custom menu when the machine is idle
 
-  #define MAIN_MENU_ITEM_1_DESC "Zero All"
-  #define MAIN_MENU_ITEM_1_GCODE "G92 X0 Y0 V0 U0"
-  #define MAIN_MENU_ITEM_1_CONFIRM          // Show a confirmation dialog before this action
+  #define MAIN_MENU_ITEM_1_DESC "Move All Axes to 0"
+  #define MAIN_MENU_ITEM_1_GCODE "G0 X0 Y0 U0 V0" 
+  #define MAIN_MENU_ITEM_1_CONFIRM
 
-  #define MAIN_MENU_ITEM_2_DESC "Zero Vert Axes" 
-  #define MAIN_MENU_ITEM_2_GCODE "G92 Y0 V0"
+  #define MAIN_MENU_ITEM_2_DESC "Move Vert Axes to 0"
+  #define MAIN_MENU_ITEM_2_GCODE "G0 Y0 V0" 
   #define MAIN_MENU_ITEM_2_CONFIRM
 
-  #define MAIN_MENU_ITEM_3_DESC "Zero Horiz Axes" 
-  #define MAIN_MENU_ITEM_3_GCODE "G92 X0 U0"
+  #define MAIN_MENU_ITEM_3_DESC "Move Horiz Axes to 0"
+  #define MAIN_MENU_ITEM_3_GCODE "G0 X0 U0" 
   #define MAIN_MENU_ITEM_3_CONFIRM
 
-  #define MAIN_MENU_ITEM_4_DESC "Reset to Mach. Zero" 
-  #define MAIN_MENU_ITEM_4_GCODE "G92.1"
-  #define MAIN_MENU_ITEM_4_CONFIRM
+  #define MAIN_MENU_ITEM_4_DESC "Zero All"
+  #define MAIN_MENU_ITEM_4_GCODE "G92 X0 Y0 V0 U0"
+  #define MAIN_MENU_ITEM_4_CONFIRM          // Show a confirmation dialog before this action
 
-  #define MAIN_MENU_ITEM_5_DESC "Move All Axes to 0"
-  #define MAIN_MENU_ITEM_5_GCODE "G0 X0 Y0 U0 V0" 
+  #define MAIN_MENU_ITEM_5_DESC "Zero Vert Axes" 
+  #define MAIN_MENU_ITEM_5_GCODE "G92 Y0 V0"
   #define MAIN_MENU_ITEM_5_CONFIRM
 
-  #define MAIN_MENU_ITEM_6_DESC "Move Vert Axes to 0"
-  #define MAIN_MENU_ITEM_6_GCODE "G0 Y0 V0" 
+  #define MAIN_MENU_ITEM_6_DESC "Zero Horiz Axes" 
+  #define MAIN_MENU_ITEM_6_GCODE "G92 X0 U0"
   #define MAIN_MENU_ITEM_6_CONFIRM
 
-  #define MAIN_MENU_ITEM_7_DESC "Move Horiz Axes to 0"
-  #define MAIN_MENU_ITEM_7_GCODE "G0 X0 U0" 
+  #define MAIN_MENU_ITEM_7_DESC "Reset to Mach. Zero" 
+  #define MAIN_MENU_ITEM_7_GCODE "G92.1"
   #define MAIN_MENU_ITEM_7_CONFIRM
 
   //#define MAIN_MENU_ITEM_4_DESC "Heat Bed/Home/Level"
